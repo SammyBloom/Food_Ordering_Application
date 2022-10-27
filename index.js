@@ -1,48 +1,58 @@
-// Callback
-
-// function one(function_two){
-//     function_two();
-// }
-
-// function two(){
-
-// }
-
-// one(two);
 
 // Jollof Ordering Application
-// let customer = "Ronaldo";
-// let food = "Jollof Rice";
-
-// // Order
-// let order = (cooking_food) =>{
-//     cooking_food();
-// }
-
-// // Cooking
-// let cooking = () =>{
-//     console.log(`${customer} ordered ${food}`);
-//     console.log(`${customer}'s ${food} is ready!!!`);
-// }
-
-// order(cooking);
-
-
 let customer = "Ronaldo";
 let food = "Jollof Rice";
+let ingredients = {
+    Rice: ["Ofada", "Native", "Foreign"],
+    Seasoning: ["Knor", "Salt", "Onga", "Magi"],
+    Tomatoes:[],
+    Oil: [],
+    Support: ["Fish", "Goat Meat", "Cow Meat", "Chicken", "Turkey"],
+}
 
 // Order
-console.log(`${customer} ordered ${food}`);
+let order = (rice_name, cooking_food) =>{
+    
+    setTimeout(function(){
+        console.log(`${customer} ordered ${ingredients.Rice[rice_name]} rice`);
+        cooking_food();
+    }, 2000);
+}
 
 // Cooking
-setTimeout(() => {
-    let customer = "Ronaldo";
-    let food = "Jollof Rice";
-    console.log(`${customer}'s ${food} is ready!!!`);
-}, 1000);
+let cooking = () =>{
 
-// Delivery
-console.log(`The ${food} has been delivered to ${customer}`);
+    setTimeout(() =>{
+        console.log("Cooking has started");
+        
+        setTimeout(() => {
+            console.log("Frying onions");
+
+            setTimeout(() => {
+                console.log("Frying tomatoes");
+
+                setTimeout(() => {
+                    console.log("Add seasoning");
+
+                    setTimeout(() => {
+                        console.log("Add stock water");
+
+                        setTimeout(() => {
+                            console.log("Final Cooking");
+
+                            setTimeout(() => {
+                                console.log(`${customer}'s ${food} is ready!!!`);;
+                            }, 3000);
+                        }, 2000);
+                    }, 2000);
+                }, 2000);
+            }, 2000);
+        }, 2000);
+    }, 0000)
+
+}
+
+order(0, cooking);
 
 
 
