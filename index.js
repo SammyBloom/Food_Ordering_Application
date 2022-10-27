@@ -1,16 +1,18 @@
 
 // Jollof Ordering Application
+
+// variables and objects
 let customer = "Ronaldo";
 let food = "Jollof Rice";
 let ingredients = {
     Rice: ["Ofada", "Native", "Foreign"],
     Seasoning: ["Knor", "Salt", "Onga", "Magi"],
-    Tomatoes:[],
-    Oil: [],
+    Tomatoes:["Fresh Tomatoes", "Tomato Paste"],
+    Oil: ["King Oil", "Palm Oil"],
     Support: ["Fish", "Goat Meat", "Cow Meat", "Chicken", "Turkey"],
 }
 
-// Order
+// Order Function
 let order = (rice_name, cooking_food) =>{
     
     setTimeout(function(){
@@ -19,7 +21,7 @@ let order = (rice_name, cooking_food) =>{
     }, 2000);
 }
 
-// Cooking
+// Cooking Function
 let cooking = () =>{
 
     setTimeout(() =>{
@@ -32,16 +34,16 @@ let cooking = () =>{
                 console.log("Frying tomatoes");
 
                 setTimeout(() => {
-                    console.log("Add seasoning");
+                    console.log("Seasoning Added");
 
                     setTimeout(() => {
-                        console.log("Add stock water");
+                        console.log("Stock water from support added");
 
                         setTimeout(() => {
                             console.log("Final Cooking");
 
                             setTimeout(() => {
-                                console.log(`${customer}'s ${food} is ready!!!`);;
+                                console.log(`${customer}'s ${ingredients.Rice[1]} rice is ready!!!`);;
                             }, 3000);
                         }, 2000);
                     }, 2000);
@@ -52,7 +54,7 @@ let cooking = () =>{
 
 }
 
-order(0, cooking);
+order(1, cooking);
 
 
 
